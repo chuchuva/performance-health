@@ -1,1 +1,464 @@
-Hello World
+﻿<!DOCTYPE html>
+<html data-ember-extension="1">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Performance Health | Spotlight</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="./assets/reset.css" type="text/css" media="screen,projection">
+  <link rel="stylesheet" href="./assets/base.css" type="text/css" media="screen,projection">
+</head>
+<body id="lucy" class="section-home">
+  <div class="masthead">
+    <div class="masthead-frame">
+      <div class="top-navbar-header">
+        <div class="top-navbar-brand">
+          <a class="dell-logo" href="http://www.software.dell.com/"><img src="./assets/dell-logo.png" alt="Dell"></a>
+          <span class="separator"></span>
+          <a class="home-link" href="http://localhost:52269/">Spotlight™</a>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="top-nav top-navbar-nav">
+          <li><a href="http://localhost:52269/monitor">Monitoring</a></li>
+          <li><a href="http://localhost:52269/sql-server/health-check">Health Check</a></li>
+          <li><a href="http://localhost:52269/connections">Connections</a></li>
+          <li><a href="http://localhost:52269/waitopedia">Waitopedia</a></li>
+          <li><a href="http://localhost:52269/capacity">Capacity</a></li>
+          <li><a href="http://localhost:52269/world/sql-server">Collective IQ</a></li>
+        </ul>
+        <ul class="top-nav top-navbar-nav top-navbar-right nav-user">
+          <li class="dropdown">
+            <a href="http://localhost:52269/sql-server/instances/386/perf-health#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="./assets/user-icon.png"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="username">Hi Pavel (Acme)</li>
+
+              <li> <a id="nav-link-signout" href="http://localhost:52269/Account/SignOut">Sign out</a></li>
+              <li> <a href="http://localhost:52269/settings" id="nav-link-settings">Settings</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="page-mid-Drk2">
+    <div class="body">
+      <link rel="stylesheet" href="./assets/pagescroller.skins.css" type="text/css" media="all">
+      <link rel="stylesheet" href="./assets/jquery.qtip.min.css" type="text/css">
+      <div class="perf-health-body" style="position: relative;">
+        <div class="like-dislike-area" style="top:-2px;">
+          <img src="./assets/like-dislike_butt.png" border="0" usemap="#Like-dislike_butts" title="Provide feedback on this page by clicking Like or Dislike">
+          <map name="Like-dislike_butts" id="Like-dislike">
+            <area shape="poly" coords="2,0,109,0,109,37,39,37" href="http://localhost:52269/sql-server/instances/386/perf-health#">
+            <area shape="poly" coords="38,40,109,40,109,109" href="http://localhost:52269/sql-server/instances/386/perf-health#">
+          </map>
+        </div>
+        <div style="height: 27px; display: block; position: relative; float: none;" class="section section_1"></div>
+        <div class="breadcrumb">
+          <a href="http://localhost:52269/connections">Connections</a>
+          <a href="http://localhost:52269/sql-server/instances/386/perf-health#">FOTREL1</a>
+          Performance Health
+        </div>
+        <div class="perf-health_heading-area ">
+          <div class="perf-health_page-heading ">Database Performance Health Detail</div>
+          <div class="perf-health_date-time">as at <span style="font-size: 140%;">25 Jun 2015 19:30</span></div>
+          <div class="clearer"></div>
+        </div>
+        <div class="perf-health_main-area">
+          <div class="perf-health-box section section_2" style="height: 210px; display: block; position: relative; float: none;">
+            <div class="perf-health_intro-box-badge"><img src="./assets/perf-health_main-badge_healthy.gif" alt=""></div>
+            <div class="perf-health_server-name-and-score">
+              <div class="perf-health_server-name">FOTREL1</div>
+              <div class="perf-health_score-holder">
+                <div class="perf-health_score-sentence">PERFORMANCE HEALTH RATING IS</div>
+                <div class="perf-health_score-GOOD">
+                  <span id="perf-health_score">86</span>%
+                </div>
+                <div class="clearer"></div>
+              </div>
+              <div style="margin-left: 4px;">
+                <div class="perf-healthSQL_tooltip1" style="float:left; display:inline;" data-hasqtip="0">
+                  How is a performance health rating calculated?
+                </div>
+                <div style="display:none;">
+                  <p>
+                    A database with healthy performance spends it time productively
+                    - on CPU and I/O.
+                  </p>
+                  <p>
+                    A database with unhealthy performance often spends too much time
+                    waiting for bottlenecks such as locks and latches,
+                    which throttle the databases throughput of data.
+                  </p>
+                  <p>
+                    By analysing the waits of an SQL Server database
+                    we can determine the relative proportion of time
+                    it spends on CPU, I/O, Locks, Latches, Redo, Data Guard etc.
+                    As long as a database devotes enough time to CPU and I/O,
+                    it will be considered healthy.
+                  </p>
+                  <p>
+                    Additionally, the single-block-read latency of the database
+                    is taken into consideration. This needs to be low/fast enough
+                    to indicate that the time being spent on I/O is productive.
+                  </p>
+                  <p>
+                    However, if the “DB Time” of the database is very low,
+                    there is not enough load being placed on the database to assess its health.
+                  </p>
+                  <p>
+                    So in a nutshell, if a database devotes most of its time
+                    to CPU and I/O and has a low single-block read latency,
+                    it will obtain a performance-health rating of 80% or more,
+                    which is considered healthy.
+                  </p>
+
+                </div>
+                <div class="perf-healthSQL_tooltip2" style="float:left; display:inline; margin-left: 20px;" data-hasqtip="1">
+                  How much history is considered for a rating?
+                </div>
+                <div style="display:none;">
+                  <p>
+                    <a href="http://localhost:52269/static/spotlightdataupload">
+                      Spotlight on SQL Server
+                    </a> samples performance metrics of your database every six hours.
+                  </p>
+                  <p>
+                    Also, the <a href="http://localhost:52269/spotlight-developer">
+                      Spotlight Developer samples metrics every hour.
+                    </a>
+                  </p>
+                  <p>
+                    The performance-health rating of the database is
+                    the current (most recent) value of this moving average.
+                  </p>
+                  <p>A rating of 80% or more is considered healthy.</p>
+                  <p>
+                    These hourly health-ratings and the moving average
+                    are shown in a chart on this page.
+                  </p>
+                </div>
+                <div class="clearer"></div>
+              </div>
+            </div>
+            <div class="clearer"></div>
+          </div>
+          <!-- GETTING BETTER/WORSE/INDIFFERENT... TREND box - STARTS here-->
+          <div class="perf-health-box section section_3" style="display: block; position: relative; float: none;">
+            <div class="perf-health-box-header">
+              <span class="collapsed-title">Is performanc­e improving or degrading?­</span>
+              <div class="perf-health-box-close"></div>
+            </div>
+            <div class="perf-health-box-content">
+              <div class="perf-health-box_Col1">
+                <div class="perf-health_font1">BUT IT’S</div>
+                <div class="perf-health_font2" style="color: #d5edfc; font-size: 350%; float:left; margin-top:4px">TOO SOON</div>
+                <img src="./assets/perf-health_pointer-indifferent.gif" alt="" class="perf-health_better-arrow">
+                <div class="clearer"></div>
+                <div class="perf-health_font1" style="font-size:135%">TO DETERMINE THE TREND</div>
+                <p style="margin-top: 20px">There are an insufficient number of performance-health ratings within the last week to analyze whether they are getting better or worse.</p>
+                <div style="margin: 20px 0 39px 0;">
+                  <p>
+                    The moving average line shows the trend of the health rating over a recent period.
+                    The most recent week of the moving-average line is used to determine
+                    whether the performance-health of this instance is getting better or worse.
+                  </p>
+                  <p>
+                    The <img src="./assets/perf-health_skull-x-bones_SML.gif" style="margin: 0 3px;">
+                    symbol highlights the least healthy contribution to the current performance-health rating.
+                    Examine the details of this rating (below) to determine the type of problem(s) being experienced.
+                    Addressing these problems will help to improve the health-rating.
+                  </p>
+                  <p>Empty regions may display in this chart if performance data is unavailable. This occurs when data is missing, or if the server is idle for a period of time.</p>
+                </div>
+              </div>
+              <div class="perf-health-box_Col2">
+                <div id="recent-health-chart" data-highcharts-chart="0" style="background-image: none;"><div class="highcharts-container" id="highcharts-0" style="position: relative; overflow: hidden; width: 525px; height: 350px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;"><svg version="1.1" style="font-family:&quot;Segoe UI&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="525" height="350"><desc>Created with Highcharts 4.1.8</desc><defs><clippath id="highcharts-1"><rect x="0" y="0" width="446" height="231"></rect></clippath></defs><rect x="0" y="0" width="525" height="350" strokeWidth="0" fill="#262626" class=" highcharts-background"></rect><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 69 273.5 L 515 273.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 69 218.5 L 515 218.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 69 163.5 L 515 163.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 69 108.5 L 515 108.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 69 53.5 L 515 53.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 155.5 273 L 155.5 283" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 277.5 273 L 277.5 283" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 399.5 273 L 399.5 283" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 69 273.5 L 515 273.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"><text x="26.21875" zIndex="7" text-anchor="middle" transform="translate(0,0) rotate(270 26.21875 157.5)" class=" highcharts-yaxis-title" style="color:#cccccc;font-weight:normal;fill:#cccccc;" visibility="visible" y="157.5"><tspan>Database Health rating</tspan></text></g><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(69,42) scale(1 1)" clip-path="url(#highcharts-1)" style="cursor:pointer;"></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(69,42) scale(1 1)" clip-path="url(#highcharts-2)" style="cursor:pointer;"><path fill="#339900" d="M 14 30.99999999999997 C 16.664 30.99999999999997 16.664 34.99999999999997 14 34.99999999999997 C 11.336 34.99999999999997 11.336 30.99999999999997 14 30.99999999999997 Z"></path><path fill="#339900" d="M 11 8.999999999999972 C 13.664 8.999999999999972 13.664 12.999999999999972 11 12.999999999999972 C 8.336 12.999999999999972 8.336 8.999999999999972 11 8.999999999999972 Z"></path><path fill="#982323" d="M 9 75 C 11.664 75 11.664 79 9 79 C 6.336 79 6.336 75 9 75 Z"></path><path fill="#339900" d="M 6 53 C 8.664 53 8.664 57 6 57 C 3.336 57 3.336 53 6 53 Z"></path><path fill="#339900" d="M 4 8.999999999999972 C 6.664 8.999999999999972 6.664 12.999999999999972 4 12.999999999999972 C 1.3359999999999999 12.999999999999972 1.3359999999999999 8.999999999999972 4 8.999999999999972 Z"></path></g><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(69,42) scale(1 1)" clip-path="url(#highcharts-1)"></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(69,42) scale(1 1)" clip-path="url(#highcharts-2)"></g></g><text x="263" text-anchor="middle" class="highcharts-title" zIndex="4" style="color:#C4E3FD;font-size:18px;font:13px &quot;Segoe UI Semibold&quot;,&quot;Myriad Pro Semibold&quot;,Arial,sans-serif;fill:#C4E3FD;width:461px;" y="20"><tspan>Performance Health Rating over the last month</tspan></text><g class="highcharts-legend" zIndex="7" transform="translate(152,308)"><rect x="0" y="0" width="221" height="27" strokeWidth="0" rx="3" ry="3" fill="none" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)" visibility="visible"></rect><rect x="0" y="0" width="221" height="27" strokeWidth="0" rx="3" ry="3" fill="none" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)" visibility="visible"></rect><rect x="0" y="0" width="221" height="27" strokeWidth="0" rx="3" ry="3" fill="none" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)" visibility="visible"></rect><rect x="0" y="0" width="221" height="27" strokeWidth="0" rx="3" ry="3" fill="#333333" visibility="visible"></rect><g zIndex="1"><g><g class="highcharts-legend-item" zIndex="1" transform="translate(8,3)"><path fill="#982323" d="M 8 9 C 10.664 9 10.664 13 8 13 C 5.336 13 5.336 9 8 9 Z"></path><text x="26" style="color:#cccccc;font-size:12px;font-weight:bold;cursor:pointer;font:12px &quot;Segoe UI Semibold&quot;, &quot;Myriad Pro Semibold&quot;, Arial, sans-serif;;fill:#cccccc;" text-anchor="start" zIndex="2" y="15">Samples</text></g><g class="highcharts-legend-item" zIndex="1" transform="translate(99.328125,3)"><path fill="none" d="M 0 11 L 16 11" stroke="#4572A7" stroke-width="2"></path><text x="26" y="15" style="color:#cccccc;font-size:12px;font-weight:bold;cursor:pointer;font:12px &quot;Segoe UI Semibold&quot;, &quot;Myriad Pro Semibold&quot;, Arial, sans-serif;;fill:#cccccc;" text-anchor="start" zIndex="2"><tspan>Moving average</tspan></text></g></g></g></g><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="155.9926818918782" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:213px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="292" opacity="1"><tspan>20. Jun</tspan></text><text x="278.0173056948878" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:213px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="292" opacity="1"><tspan>22. Jun</tspan></text><text x="400.04192949789734" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:213px;text-overflow:clip;" text-anchor="middle" transform="translate(0,0)" y="292" opacity="1"><tspan>24. Jun</tspan></text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="54" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:163px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="277" opacity="1">0</text><text x="54" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:163px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="222" opacity="1">25</text><text x="54" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:163px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="167" opacity="1">50</text><text x="54" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:163px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="112" opacity="1">75</text><text x="54" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:163px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="57" opacity="1">100</text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(0,-9999)"><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"></path><text x="8" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;" y="20"></text></g><image preserveAspectRatio="none" x="69.45690834473324" y="124" width="18" height="23" href="./assets/perf-health_skull-x-bones_SML.gif"></image></svg></div></div>
+                <div>
+                  <div class="perf-healthSQL_tooltip3" style="float:left; display:inline; margin-left: 150px;" data-hasqtip="2">
+                    About Samples
+                  </div>
+                  <div style="display:none;">
+                    <p>
+                      Spotlight on SQL Server samples the performance metrics of the database every six hours.
+                      Each sample is then assigned a performance-health rating.
+                      A rating of 80% or more is healthy and appears as a green dot in this chart.
+                      If a sample is assigned an unhealthy rating, it is appears as a red dot.
+                    </p>
+                  </div>
+                  <div class="perf-healthSQL_tooltip4" style="float:left; display:inline; margin-left: 40px" data-hasqtip="3">
+                    About the Moving Average
+                  </div>
+                  <div style="display:none;">
+                    <p>
+                      If the individual samples fluctuate a lot,
+                      the information in the chart would be difficult to interpret
+                      - the chart would just be a noisy collection of dots.
+                      A moving average is generated to smooth out fluctuations
+                      in the individual samples, producing a line with that can
+                      be interpreted more easily.
+                    </p>
+                    <p>
+                      Note: The moving average line will not appear
+                      in the chart until there are more than 40 individual samples.
+                    </p>
+                  </div>
+                  <div class="clearer"></div>
+                </div>
+              </div>
+              <div class="clearer"></div>
+            </div>
+          </div>
+          <!-- GETTING BETTER/WORSE/INDIFFERENT... TREND box - ENDS here-->
+          <!-- WHEN LEAST HEALTHY... box - STARTS here-->
+          <div class="perf-health-box section section_4" style="display: block; position: relative; float: none;">
+            <div class="perf-health-box-header">
+              <span class="collapsed-title">How can performanc­e be improved?­</span>
+              <div class="perf-health-box-close"></div>
+            </div>
+            <div class="perf-health-box-content">
+              <div class="perf-health-box_Col1">
+                <div class="perf-health_font1" style="margin-top: 7px;">WHEN</div>
+                <div style="width: 310px;">
+                  <div class="perf-health_font2_UNHEALTHY">LEAST<br>HEALTHY</div>
+                  <div class="least-healthly_tooltip" style="float:left; display:inline; margin: -30px 0 0 5px; cursor:pointer;" data-hasqtip="4">
+                    <img src="./assets/perf-health_skull-x-bones_XTRA-LRG.gif" alt="">
+                  </div>
+                  <div style="display:none;">
+                    <p>
+                      The performance of each SQL Server instance is designated as either healthy or not,
+                      based on the proportion of time spent waiting for CPU+I/O versus other wait-types,
+                      in conjunction with the latency of single-page-reads.
+                      An instance that spends 80% of its time waiting for CPU or I/O
+                      <strong>and</strong> has low I/O latency is designated as healthy.
+                    </p>
+                    <p>
+                      These attributes indicate good performance health,
+                      as they imply that the instance is not bottlenecked
+                      in a way that prevents it from being able to perform work and be
+                      <strong>responsive</strong>.
+                    </p>
+                  </div>
+                  <div class="clearer"></div>
+                  <div id="worst-health-time" class="perf-health_font1">(ON 18 Jun 2015 17:30)</div>
+                </div>
+                <img id="progress-indicator-problems" src="./assets/loading_drk-Bg.gif" alt="">
+                <div id="problems">
+                  <div class="perf-health_font1" style="font-size: 130%; margin-top: 0;">
+                    THIS WAS BECAUSE OF
+                  </div>
+                  <div id="excessive-waits" class="perf-health_font1" style="font-size: 130%; margin-top: 0;">
+                    EXCESSIVE TIME WAS<br>SPENT WAITING ON
+                  </div>
+                  <div style="margin-top: 6px;">
+                    <div id="wait-problems" class="perf-health_font4"></div>
+                    <div id="more-wait-problems" class="perf-health_font4" style="font-size: 120%; margin-top: 2px;">AND OTHER THINGS</div>
+                    <div id="in-addition-to" class="perf-health_font4" style="font-size: 150%; color: #fff; margin-top: 21px;">IN ADDITION TO A</div>
+                    <div id="high-single-block-read-time" class="perf-health_font4" style="font-size: 230%; line-height: 110%;">HIGH SINGLE BLOCK READ TIME</div>
+                  </div>
+                </div>
+              </div>
+              <div class="perf-health-box_Col2">
+                <div id="wait-categories-chart"></div>
+                <div class="perf-health-box_blurb-area">
+                  <div class="perf-health-box_chart-title" style="color:#95f968; font-size:78%;">CPU and I/O</div>
+                  <div style="margin-bottom: 15px;">
+                    <p>
+                      Spending time on CPU and I/O is the best indicator that
+                      the database is performing useful work.
+                      In the chart these bars are displayed in green,
+                      to signify that having the database spend time here is good.
+                      For example, an OLAP database may spend most time on CPU
+                      while an OLTP database may spend most time on I/O.
+                      Either way, you ideally want at least 95% of all
+                      time-spent-waiting to be on CPU and I/O.
+                    </p>
+                  </div>
+                  <div class="perf-health-box_chart-title" style="color:#f95454; font-size:78%;">Other overheads</div>
+                  <div style="margin-bottom: 15px;">
+                    <p>
+                      The red bars indicate the proportion of time spent by the database on overheads.
+                      The red color signifies that having the database spend time here is bad.
+                      A healthy database will not spent more than 5% of its time on overheads,
+                      with no single overhead exceeding 2%.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="clearer"></div>
+              <div class="perf-health-box_Col1" style="width: 275px;">
+                <div class="perf-health_font3">
+                  <span id="single-block-read-latency">&nbsp;--</span>
+                  <span style="font-size: 30%">ms/read</span>
+                </div>
+                <div class="perf-health-box_chart-title" style="color:#feeb6c;margin: 0 0 0 20px">
+                  I/O Latency
+                  <img src="./assets/perf-health_yellow-arrowR.gif" alt="" style="margin-left: 5px; vertical-align:middle;">
+                </div>
+                <div style="margin: 5px 0 15px 20px">
+                  <p>Latency of single-block reads is a good indicator of the responsiveness of the I/O subsystem.</p>
+                  <p>
+                    The latency should be <span style="color:#fbed91;">less than or equal to 10ms</span> in a healthy database,
+                    so that it can perform enough I/O’s per second to feel responsive.
+                  </p>
+                </div>
+              </div>
+              <div class="perf-health-box_Col2">
+                <div id="io-latency-chart"></div>
+              </div>
+              <div class="clearer"></div>
+              <div class="perf-health-box_Col1" style="width: 275px;">
+                <div class="perf-health-box_chart-title" style="color:#feeb6c;margin: 100px 0 0 20px">
+                  I/O Latency vs. Time
+                  <img src="./assets/perf-health_yellow-arrowR.gif" alt="" style="margin-left: 5px; vertical-align:middle;">
+                </div>
+                <div style="margin: 5px 0 15px 20px">
+                  <p>
+                    Use this chart to determine whether previous occurrences of poor application response times might be caused by I/O subsystem latency.
+                  </p>
+                </div>
+              </div>
+              <div class="perf-health-box_Col2">
+                <div id="io-latency-history-chart" data-highcharts-chart="1"><div class="highcharts-container" id="highcharts-4" style="position: relative; overflow: hidden; width: 520px; height: 300px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;"><svg version="1.1" style="font-family:&quot;Segoe UI&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="520" height="300"><desc>Created with Highcharts 4.1.8</desc><defs><clippath id="highcharts-5"><rect x="0" y="0" width="447" height="243"></rect></clippath><lineargradient x1="0" y1="100.00340666666665%" x2="0%" y2="0%" gradientUnits="userSpaceOnUse" id="highcharts-8"><stop offset="0.47" stop-color="#2d6b0a" stop-opacity="1"></stop><stop offset="0.62" stop-color="#e2a806" stop-opacity="1"></stop><stop offset="0.76" stop-color="#790202" stop-opacity="1"></stop></lineargradient></defs><rect x="0" y="0" width="520" height="300" strokeWidth="0" fill="#262626" class=" highcharts-background"></rect><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 63 285.5 L 510 285.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 204.5 L 510 204.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 123.5 L 510 123.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 41.5 L 510 41.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 63 285.5 L 510 285.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"><text x="26.140625" zIndex="7" text-anchor="middle" transform="translate(0,0) rotate(270 26.140625 163.5)" class=" highcharts-yaxis-title" style="color:#dddddd;font-weight:normal;fill:#dddddd;" visibility="visible" y="163.5"><tspan>milliseconds per I/O</tspan></text></g><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series" visibility="visible" zIndex="0.1" transform="translate(63,42) scale(1 1)" clip-path="url(#highcharts-5)"><path fill="url(#highcharts-8)" d="M 0 0" zIndex="0"></path><path fill="none" d="M 0 0" stroke-linejoin="round" visibility="visible" stroke="rgba(192,192,192,0.0001)" stroke-width="20" zIndex="2" class=" highcharts-tracker" style=""></path></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,42) scale(1 1)" clip-path="url(#highcharts-6)" style=""></g></g><text x="260" text-anchor="middle" class="highcharts-title" zIndex="4" style="color:#C4E3FD;font-size:18px;font:13px &quot;Segoe UI Semibold&quot;,&quot;Myriad Pro Semibold&quot;,Arial,sans-serif;fill:#C4E3FD;width:456px;" y="20"><tspan>I/O Latency Versus Time</tspan></text><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="0" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="-9999">0</text><text x="48" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="208" opacity="1">10</text><text x="48" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="127" opacity="1">20</text><text x="48" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="46" opacity="1">30</text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(0,-9999)"><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"></path><text x="8" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;" y="20"></text></g></svg></div></div>
+              </div>
+              <div class="clearer"></div>
+            </div>
+          </div>
+          <!-- WHEN LEAST HEALTHY... box - ENDS here-->
+          <!-- x% POPLN ARE BETTER/WORSE THAN YOU box - STARTS here-->
+          <div class="perf-health-box section section_5" style="display: block; position: relative; float: none;">
+            <div class="perf-health-box-header">
+              <span class="collapsed-title">How does this instance stack up?­</span>
+              <div class="perf-health-box-close"></div>
+            </div>
+            <div class="perf-health-box-content">
+              <div class="perf-health-box_Col1" style="height:350px;">
+                <div class="perf-health_font1" style="margin-top:6px;">AND THIS INSTANCE IS</div>
+                <div class="perf-health_font2" style="font-size:250%; color:#fce578; margin-top: 0;">HEALTHIER THAN</div>
+                <div class="perf-health_font3" style="margin-top: -10px;">50%</div>
+                <div class="perf-health_font1-1" style="font-size:95%; margin-top: -5px;">OF THE SPOTLIGHT POPULATION</div>
+                <div style="margin: 10px 0 0 0;">
+                  <p>
+                    The height of the bars in this histogram indicate the
+                    relative proportion of database health in the Spotlight population.
+                    Databases assigned to the red bars are unhealthy,
+                    as they have a health rating less than 80%.<br>
+                    Your mission, should you choose to accept it,
+                    is to have all your databases assigned to a green bar.
+                  </p>
+                </div>
+              </div>
+              <div class="perf-health-box_Col2">
+                <div id="world-comparison-chart" data-highcharts-chart="2" style="background-image: none;"><div class="highcharts-container" id="highcharts-9" style="position: relative; overflow: hidden; width: 520px; height: 300px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;"><svg version="1.1" style="font-family:&quot;Segoe UI&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="520" height="300"><desc>Created with Highcharts 4.1.8</desc><defs><clippath id="highcharts-10"><rect x="0" y="0" width="447" height="200"></rect></clippath><lineargradient x1="0" y1="0" x2="0" y2="300" gradientUnits="userSpaceOnUse" id="highcharts-11"><stop offset="0" stop-color="rgb(117,35,35)" stop-opacity="1"></stop><stop offset="1" stop-color="rgb(0,0,0)" stop-opacity="1"></stop></lineargradient><lineargradient x1="0" y1="0" x2="0" y2="300" gradientUnits="userSpaceOnUse" id="highcharts-12"><stop offset="0" stop-color="rgb(47,119,11)" stop-opacity="1"></stop><stop offset="1" stop-color="rgb(0,0,0)" stop-opacity="1"></stop></lineargradient></defs><rect x="0" y="0" width="520" height="300" strokeWidth="0" fill="#262626" class=" highcharts-background"></rect><g class="highcharts-grid" zIndex="1"></g><g class="highcharts-grid" zIndex="1"><path fill="none" d="M 63 242.5 L 510 242.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 175.5 L 510 175.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 109.5 L 510 109.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path><path fill="none" d="M 63 41.5 L 510 41.5" stroke="#444444" stroke-width="1" zIndex="1" opacity="1"></path></g><g class="highcharts-axis" zIndex="2"><path fill="none" d="M 107.5 242 L 107.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 151.5 242 L 151.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 196.5 242 L 196.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 241.5 242 L 241.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 286.5 242 L 286.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 330.5 242 L 330.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 375.5 242 L 375.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 420.5 242 L 420.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 464.5 242 L 464.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 509.5 242 L 509.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><path fill="none" d="M 62.5 242 L 62.5 252" stroke="#C0D0E0" stroke-width="1" opacity="1"></path><text x="286.5" zIndex="7" text-anchor="middle" transform="translate(0,0)" class=" highcharts-xaxis-title" style="color:#dddddd;font-weight:normal;fill:#dddddd;" visibility="visible" y="281.390625"><tspan>Performance Health Rating</tspan></text><path fill="none" d="M 63 242.5 L 510 242.5" stroke="#C0D0E0" stroke-width="1" zIndex="7" visibility="visible"></path></g><g class="highcharts-axis" zIndex="2"><text x="26.140625" zIndex="7" text-anchor="middle" transform="translate(0,0) rotate(270 26.140625 142)" class=" highcharts-yaxis-title" style="color:#dddddd;font-weight:normal;fill:#dddddd;" visibility="visible" y="142"><tspan>% of Instances</tspan></text></g><g class="highcharts-series-group" zIndex="3"><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,42) scale(1 1)" style="" clip-path="url(#highcharts-10)"><rect x="11.5" y="200.5" width="22" height="0" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="55.5" y="200.5" width="22" height="0" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="100.5" y="200.5" width="22" height="0" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="145.5" y="200.5" width="22" height="0" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="189.5" y="200.5" width="22" height="0" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="234.5" y="200.5" width="22" height="0" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="279.5" y="200.5" width="22" height="0" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="324.5" y="117.5" width="22" height="83" stroke="#810000" stroke-width="1" fill="url(#highcharts-11)" rx="0" ry="0"></rect><rect x="368.5" y="117.5" width="22" height="83" stroke="#1e5d04" stroke-width="1" fill="url(#highcharts-12)" rx="0" ry="0"></rect><rect x="413.5" y="33.5" width="22" height="167" stroke="#1e5d04" stroke-width="1" fill="url(#highcharts-12)" rx="0" ry="0"></rect></g><g class="highcharts-markers" visibility="visible" zIndex="0.1" transform="translate(63,42) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,42) scale(1 1)" clip-path="url(#highcharts-10)" style=""></g><g class="highcharts-markers highcharts-tracker" visibility="visible" zIndex="0.1" transform="translate(63,42) scale(1 1)" clip-path="url(#highcharts-13)" style=""><image preserveAspectRatio="none" href="./assets/you-pin-dark.png" x="386" y="200" width="81" height="160" fill="#7cb5ec" r="0" transform="translate(-40,-80)"></image></g></g><text x="260" text-anchor="middle" class="highcharts-title" zIndex="4" style="color:#C4E3FD;font-size:18px;font:13px &quot;Segoe UI Semibold&quot;,&quot;Myriad Pro Semibold&quot;,Arial,sans-serif;fill:#C4E3FD;width:456px;" y="20"><tspan>Percentage of Instances with the same Performance Health Rating</tspan></text><g class="highcharts-axis-labels highcharts-xaxis-labels" zIndex="7"><text x="85.35" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">0%</text><text x="130.05" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">10%</text><text x="174.75" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">20%</text><text x="219.45000000000002" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">30%</text><text x="264.15" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">40%</text><text x="308.85" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">50%</text><text x="353.55" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">60%</text><text x="398.25" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">70%</text><text x="442.95000000000005" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">80%</text><text x="487.65000000000003" style="color:#999999;cursor:default;font-size:11px;fill:#999999;" text-anchor="middle" transform="translate(0,0)" y="261" opacity="1">90%</text></g><g class="highcharts-axis-labels highcharts-yaxis-labels" zIndex="7"><text x="48" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="246" opacity="1">0</text><text x="48" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="179" opacity="1">20</text><text x="48" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="112" opacity="1">40</text><text x="48" style="color:#999999;cursor:default;font-size:11px;fill:#999999;width:162px;text-overflow:clip;" text-anchor="end" transform="translate(0,0)" y="46" opacity="1">60</text></g><g class="highcharts-tooltip" zIndex="8" style="cursor:default;padding:0;white-space:nowrap;" transform="translate(0,-9999)"><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.049999999999999996" stroke-width="5" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.09999999999999999" stroke-width="3" transform="translate(1, 1)"></path><path fill="none" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5" isShadow="true" stroke="black" stroke-opacity="0.15" stroke-width="1" transform="translate(1, 1)"></path><path fill="rgba(249, 249, 249, .85)" d="M 3.5 0.5 L 13.5 0.5 C 16.5 0.5 16.5 0.5 16.5 3.5 L 16.5 13.5 C 16.5 16.5 16.5 16.5 13.5 16.5 L 3.5 16.5 C 0.5 16.5 0.5 16.5 0.5 13.5 L 0.5 3.5 C 0.5 0.5 0.5 0.5 3.5 0.5"></path><text x="8" zIndex="1" style="font-size:12px;color:#333333;fill:#333333;" y="20"></text></g></svg></div></div>
+              </div>
+              <div class="clearer"></div>
+            </div>
+          </div>
+          <!-- x% POPLN ARE BETTER/WORSE THAN YOU... box - ENDS here-->
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-spacer"></div>
+      <div class="footer-nav">
+        <div class="footer-nav_col1">
+          <h1><img src="./assets/footer-icon_Spotlight.png" alt="Spotlight" align="absmiddle" style="margin-right: 10px;">Spotlight</h1>
+          <ul>
+            <li> <a href="http://localhost:52269/Spotlight-on-SQL-Server-Enterprise/Version11_5">Spotlight on SQL Server Enterprise</a></li>
+            <li><a href="http://software.dell.com/products/spotlight-on-oracle/" target="_blank">Spotlight on Oracle</a></li>
+            <li><a href="http://localhost:52269/spotlight-developer">Spotlight Developer</a></li>
+            <li><a href="http://localhost:52269/spotlight/mobile-monitoring">Spotlight Mobile</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav_col2">
+
+          <h1> <img src="./assets/footer-icon-community.png" alt="Community" align="absmiddle" style="margin-right: 10px;">Community</h1>
+          <ul>
+            <li><a href="http://localhost:52269/world/sql-server">Collective Intelligence</a></li>
+            <li><a href="http://blog.spotlightessentials.com/" target="_blank">Spotlight Blog</a></li>
+            <li><a href="http://www.toadworld.com/platforms/sql-server/default.aspx" target="_blank">SQL Server Community</a></li>
+            <li><a href="http://www.toadworld.com/platforms/oracle/default.aspx" target="_blank">Oracle Community</a></li>
+
+          </ul>
+        </div>
+        <div class="footer-nav_col3">
+          <h1><img src="./assets/footer-icon_DevDBAs-light.png" alt="Documentation" align="absmiddle" style="margin-right: 10px;">Documentation</h1>
+          <ul>
+            <li><a href="http://localhost:52269/documentation/spotlight-developer">Spotlight Developer</a></li>
+            <li><a href="http://localhost:52269/documentation/health-check">Health Check</a></li>
+            <li><a href="http://localhost:52269/documentation/mobile">Mobile Monitoring</a></li>
+            <li><a href="http://localhost:52269/documentation/security">Data Handling and Security</a></li>
+            <li><a href="http://localhost:52269/documentation/faq">Frequently Asked Questions</a></li>
+            <li><a href="http://localhost:52269/spotlight/scom">Spotlight Management Pack for SCOM</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav_col4">
+          <h1><img src="./assets/footer-icon_Feedback-light.png" alt="Contact" align="absmiddle" style="margin-right: 10px;">Contact</h1>
+          <ul>
+            <li><a href="http://localhost:52269/support">Support</a></li>
+            <li><a href="http://localhost:52269/feedback">Feedback</a></li>
+            <li><a href="http://localhost:52269/static/terms">Terms of Service</a></li>
+            <li><a href="http://software.dell.com/legal/privacy.aspx" target="_blank">Privacy Statement</a></li>
+            <li><a href="http://localhost:52269/acknowledgements">Acknowledgements</a></li>
+          </ul>
+        </div>
+        <div class="clearer"></div>
+      </div>
+      <div class="copyright-container">
+        <div class="copyright">
+          1.0.0.number_not_set &nbsp;&nbsp; ©
+          2016
+          Dell, Inc. ALL RIGHTS RESERVED.
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="http://localhost:52269/feedback" id="feedback-badge">Feedback</a>
+  <script type="text/javascript" src="./assets/jquery.min.js"></script>
+  <script type="text/javascript">
+    if (typeof jQuery == 'undefined') {
+      document.write(unescape("%3Cscript src='/js/jquery-1.11.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+    }
+  </script>
+  <script type="text/javascript" src="./assets/lucy.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Lucy.init();
+    });
+  </script>
+
+  <script type="text/javascript">
+    function getChartDataUrl(params) {
+      params.instabaseID = 386;
+      params.observationTime = '2015-06-25T19:30:01';
+      return '/sql-server/perf-health/chart-data';
+    }
+
+    function getPointDetailsUrl(params) {
+      params.instabaseID = 386;
+      return '/sql-server/perf-health/point-details';
+    }
+  </script>
+  <div class="pageScrollerNav standardNav left">
+    <ul>
+      <li><a href="#top">FIX FIRST</a></li>
+      <li><a href="#security">SECURITY</a></li>
+      <li><a href="#recovery">RECOVERY</a></li>
+      <li><a href="#index">INDEX OPT</a></li>
+      <li><a href="#memory">MEMORY</a></li>
+      <li><a href="#io">I/O</a></li>
+      <li><a href="#sql">SQL</a></li>
+      <li><a href="#config">CONFIG</a></li>
+    </ul>
+  </div>
+  <script src="./assets/jquery.pagescroller.js" type="text/javascript"></script>
+  <script src="./assets/jquery.easing.1.3.js" type="text/javascript"></script>
+  <script src="./assets/jquery.easing.compatibility.js" type="text/javascript"></script>
+  <script src="./assets/jquery.qtip.min.js" type="text/javascript"></script>
+  <script src="./assets/highcharts.min.js" type="text/javascript"></script>
+  <script src="./assets/performance-health.js" type="text/javascript"></script>
+  <script src="./assets/bootstrap.min.js"></script>
+
+</body>
+</html>
